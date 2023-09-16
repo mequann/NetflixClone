@@ -4,7 +4,7 @@ const instance=axios.create({
     baseUrl:"https://api.themoviedb.org/3",
    
 })
-console.log(instance)
+// console.log(instance)
 // for fetching data we use  get method
        //ex instance.get("/movie/top_rated")<==>api.themoviedb.org/3/movie/top_rated
 export default instance
