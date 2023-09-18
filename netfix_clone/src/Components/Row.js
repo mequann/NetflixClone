@@ -1,7 +1,7 @@
 import React ,{useState,useEffect}from 'react'
+import axios  from '../axios';
 
 import "./Row.css"
-// import instance  from '../axios';
 // import axios from "axios"
 import Youtube from "react-youtube"
 import movieTrailer from "movie-trailer"
@@ -15,25 +15,25 @@ function Row({title,fetchUrl,isLargeRow}) {
   const[trailerUrl,setTrailerUrl]=useState("")
   useEffect(()=>{
     // async function fetchData(){
-    //   try{  
-    //        const requests=await axios.get(`${baseUrl}${fetchUrl}`)
-    //        console.log(requests.data.resuts)
+    //   // try{  
+    //        const requests=await axios.get(fetchUrl)
+    //        console.log(requests)
     //        setMovies(requests.data.resuts);
     //         //  console.log(requests.data.resuts)
-    //         return requests
-    //       }
-    //          catch(error){
+    //         // return requests
+    //       // }
+    //         //  catch(error){
 
-    //          console.log(error.message)
-    //         }
+    //         //  console.log(error.message)
+    //         // }
     //       }
-    //     fetchData();
-    //////
+        
+    ////
     async function fetchData() {
       const response = await fetch(baseUrl+fetchUrl);
       const movies = await response.json();
       //console.log(movies);
-      //console.log(movies.results);
+      // console.log(movies.results);
       setMovies(movies.results)
     }
     fetchData()
@@ -67,8 +67,8 @@ else{
        <div className='row__posters'>
         {Movies.map((movie)=>
         (
-          <img className={`row__poster ${isLargeRow&&'row__posterLarge'}`} 
-          src={`${base_url}${isLargeRow? movie.poster_path:movie.backdrop_path}`} alt={movie.name} onClick={()=>handleclick(movie)}/>
+          <img className={`row__poster ${isLargeRow&&'row__posterLarge'}` } 
+          src={`${base_url}${isLargeRow? movie.poster_path:movie.backdrop_path}` } alt={movie.name} onClick={()=>handleclick(movie)} />
           
         ))}
          

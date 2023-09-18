@@ -1,7 +1,8 @@
 import React ,{useEffect, useState}from 'react'
 import "./Banner.css"
-import axios from"../axios"
+
 import requests from './../request';
+import axios from '../axios';
 
 const baseUrl="https://api.themoviedb.org/3"
 
@@ -10,13 +11,16 @@ function Banner() {
     useEffect(()=>{
 async function fetchData(){
     // const request=await  axios?.get(requests.fetchNetflixOriginals)
+    // console.log(request)
     // setMovie(request.data.results[Math.floor(Math.random()*request.data.results.length)])
-    const response = await fetch(`${baseUrl}${requests.fetchNetflixOriginals}`);
-    const request=response.json()
+    const response = await fetch(baseUrl+requests.fetchNetflixOriginals);
+    const request= await response.json()
     console.log(request)
-    console.log(request?.results)
-    // setMovie(request?.results[Math.floor(Math.random()*request.data.results.length)])
-    return request
+   console.log(request.results.length)
+//    let indx=Math.floor(Math.random()*request.results.length)
+//    console.log(indx)
+    setMovie(request.results[Math.floor(Math.random()*request.results.length)])
+    // //  return request
 }
    fetchData() },[])
    console.log(Movie)
