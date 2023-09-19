@@ -75,7 +75,7 @@ else{
        </div>
        <div style={{padding:"40px"}}>
         {
-          trailerUrl&&<Youtube videoId={trailerUrl} opts={onpopstate}/>
+          trailerUrl&&<Youtube videoId={trailerUrl} opts={opts}/>
         }
        </div>
     </div>

@@ -5,6 +5,7 @@ import requests from './../request';
 import axios from '../axios';
 
 const baseUrl="https://api.themoviedb.org/3"
+const base_url="https://image.tmdb.org/t/p/original/"
 
 function Banner() {
     const[Movie,setMovie]=useState([])
@@ -31,7 +32,7 @@ async function fetchData(){
     <header className='banner'
         style={
            { backgroundSize:"cover",
-        backgroundImage:`url(${baseUrl}${Movie?.backdrop_path})`,
+        backgroundImage:`url(${base_url}${Movie?.backdrop_path})`,
     BackGroundPosition:`center center`
 }} >
 <div className='banner__contents'>
