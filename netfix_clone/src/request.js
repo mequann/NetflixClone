@@ -10,7 +10,9 @@ const requests={
     fetchHorrorMovies: `/discover/movie?api_key=${API_KEY}&with_genres=27`,
     fetchRomanMovies: `/discover/movie?api_key=${API_KEY}&with_genres=10749`,
     fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
-    fetchpopularMovies:`/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
+    fetchpopularMovies:`/movie/popular?api_key=${API_KEY}&language=en-US&page=1`,
+    fetchfavoriteMovies:`/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`,
+   
 }
 export default requests 
 // https://api.themoviedb.org/3/movie/top_rated?api_key=26a392e3ed2d3ae6de92b85a1074c73&language=en-US`,
